@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ElementRef, RefObject, useEffect, useRef } from 'react'
 
-import { useLayout } from '@/providers/layout/layout'
+import { useLayout } from '@/providers/layout'
 
 const menuItems: Array<{ displayName: string; href: string; id: string }> = [
   { displayName: 'Short content', href: '/short-content', id: 'menuItemOne' },
@@ -200,11 +200,14 @@ export default function Menus() {
       }
 
       const scrollTop = scrollContainer.scrollTop
+      const isAtBottom = scrollContainer.scrollHeight - scrollContainer.clientHeight <= scrollTop + 10
 
-      if (scrollTop > lastScrollTop.current) {
-        setMenusVisible(false)
-      } else {
-        setMenusVisible(true)
+      if (!isAtBottom) {
+        if (scrollTop > lastScrollTop.current) {
+          setMenusVisible(false)
+        } else {
+          setMenusVisible(true)
+        }
       }
 
       lastScrollTop.current = scrollTop
@@ -212,7 +215,9 @@ export default function Menus() {
 
     const handleScroll = () => requestAnimationFrame(updateHeaderStyles)
 
-    scrollContainer.addEventListener('scroll', handleScroll, { passive: true })
+    scrollContainer.addEventListener('scroll', handleScroll, {
+      passive: true,
+    })
     return () => scrollContainer.removeEventListener('scroll', handleScroll)
   }, [mobilePanelVisible, setMenusVisible])
 
