@@ -3,7 +3,7 @@
 import clsx from 'clsx'
 
 import { PopupButton } from './PopupButton'
-import { useLayout } from '@/providers/layout/layout'
+import { useLayout } from '@/providers/layout'
 
 export default function Popup() {
   const { showPopup } = useLayout()
