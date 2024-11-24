@@ -1,6 +1,6 @@
 # Gorgeous site layout
 
--  Simple site layout using Next.js and Tailwind
+- Simple site layout using Next.js and Tailwind
 
 ## Install
 

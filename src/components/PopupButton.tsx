@@ -2,7 +2,7 @@
 
 import clsx from 'clsx'
 
-import { useLayout } from '@/providers/layout/layout'
+import { useLayout } from '@/providers/layout'
 
 export function PopupButton({
   onClick = 'toggle',
