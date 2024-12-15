@@ -81,7 +81,7 @@ export function MobileMenu({ ref }: { ref: RefObject<HTMLDivElement> }) {
     'bg-slate-100 border border-transparent active:border-slate-500 py-0.5 px-2 rounded transition-colors duration-300'
 
   return (
-    <div
+    <header
       ref={ref}
       data-component="MobileMenu"
       className={clsx(
@@ -136,7 +136,7 @@ export function MobileMenu({ ref }: { ref: RefObject<HTMLDivElement> }) {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 
@@ -149,7 +149,7 @@ export function DesktopMenu({ ref }: { ref: RefObject<HTMLDivElement> }) {
   const activeClasses = 'bg-slate-200'
 
   return (
-    <div
+    <header
       ref={ref}
       data-component="DesktopMenu"
       className={clsx(
@@ -180,7 +180,7 @@ export function DesktopMenu({ ref }: { ref: RefObject<HTMLDivElement> }) {
           />
         ))}
       </div>
-    </div>
+    </header>
   )
 }
 
