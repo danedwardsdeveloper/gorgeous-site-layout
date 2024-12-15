@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB" suppressHydrationWarning>
-      <body className="bg-slate-50 antialiased h-screen flex flex-col overflow-hidden">
+      <body className="antialiased h-screen flex flex-col overflow-hidden bg-slate-50 dark:bg-black">
         <Providers>
           <Menus />
           <MainContainer>{children}</MainContainer>
